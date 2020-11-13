@@ -13,7 +13,7 @@ bookmarksRouter
       .json(bookmarks);
   })
   .post(bodyParser, (req, res) => {
-    const { title, url, rating=0, desc=''} = req.body;
+    const { title, url, rating=0, description=''} = req.body;
 
     if(!title) {
       logger.error('Title is required');
@@ -37,7 +37,7 @@ bookmarksRouter
       title,
       url,
       rating,
-      desc
+      description
     };
   
     bookmarks.push(bookmark);
